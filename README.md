@@ -1,0 +1,1 @@
+Bu repository’de yazılım geliştirme sürecinde öğrendiğim bilgileri, araştırmalarımı ve notlarımı paylaşacağım. Amacım, konuları yalnızca ne olduklarıyla değil; neden ortaya çıktıkları, hangi problemleri çözdükleri ve nasıl kullanıldıklarıyla birlikte anlaşılır şekilde arşivlemek.
