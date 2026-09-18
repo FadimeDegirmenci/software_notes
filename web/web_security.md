@@ -34,3 +34,21 @@ Yazılımları güncel tut.
 Gereksiz hassas veri saklama.
 Güvenlik açıklarını tarama araçlarıyla kontrol et.
 Güncel OWASP tehditlerini takip et.
+---------------------------
+Şunları yaptığından emin ol:
+Authentication: Kullanıcının kim olduğunu doğrula.
+Authorization: Giriş yapan kullanıcının ne yapmaya yetkili olduğunu kontrol et.
+XSS: Kullanıcının siteye zararlı JavaScript sokması durumunu kontrol edecek bir mekanizma yarat.
+CSRF: Giriş yapmış kullanıcının oturumunu kullanarak onun adına istek yaptırılmasına engel ol.
+SQL Injection: Kullanıcı girdisiyle SQL sorgusunun değiştirilmesine izin verme.
+HTTPS/TLS: Tarayıcı ile sunucu arasındaki veriyi şifrele.
+Cookie ve Session güvenliği: Oturum bilgilerinin HttpOnly, Secure, SameSite gibi ayarlarla korunmasını sağla.
+Password güvenliği: Şifreleri düz metin saklama; hash kullan.
+Input Validation: Kullanıcıdan gelen her veriyi server tarafında kontrol et.
+File Upload güvenliği: Yüklenen dosyanın türünü, boyutunu ve adını kontrol et.
+CORS: Hangi sitelerin tarayıcı üzerinden senin API'ına erişebileceğini belirle.
+Security Headers / CSP: Tarayıcıya hangi içeriklerin çalıştırılabileceği gibi güvenlik kuralları ver.
+Rate Limiting: Bir kullanıcının kısa sürede binlerce istek göndermesini sınırla.
+Secrets yönetimi: API key, DB şifresi gibi bilgileri koda veya GitHub'a koyma.
+Logging: Şüpheli girişler ve hatalar gibi olayları kaydet.
+Dependency güvenliği: Kullandığın NuGet paketlerini ve .NET sürümünü güncel tut.
