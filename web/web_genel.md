@@ -132,5 +132,30 @@ Garbage Collection
 Hata yönetimi
 Thread yönetimi
 
-Neden var?
-Programın düşük seviyeli çalışma işlerini senin yerine yönetmek için
+
+d. BCL — Base Class Library
+
+.NET'in temel hazır kütüphanesidir. C# yazarken kullandığın birçok hazır sınıf BCL'den gelir.
+
+
+e.NET CLI — Command Line Interface
+
+Terminalden .NET'i yönetmek için kullanılan komut sistemidir. Mesela: dotnet new console
+
+f. NuGet
+
+.NET'in paket yöneticisidir. Başkalarının hazırladığı kütüphaneleri projemize eklememizi sağlar.
+
+g. TLS = Transport Layer Security
+
+HTTPS'in kullandığı güvenlik teknolojisidir.
+
+TLS üç önemli şey sağlar: Şifreleme, Kimlik doğrulama, Veri bütünlüğü
+
+
+h. Web Servers
+
+Web server, internetten gelen HTTP isteklerini karşılayan yazılımdır.Örn. Nginx, Apache, IIS
+Kestrel.
+
+ASP.NET Core'un varsayılan web server'ı Kestrel'dir.
