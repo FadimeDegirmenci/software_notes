@@ -139,3 +139,112 @@ Kullanım şu şekildedir:
 IFurnitureFactory factory = new OfficeFactory();
 IChair chair = factory.CreateChair();
 ITable table = factory.CreateTable();
+
+3. Builder
+Builder, bir nesneyi adım adım oluşturmak için kullanılır.
+
+Mesela bir bilgisayar düşün:
+
+İşlemci
+RAM
+Ekran kartı
+SSD
+
+Bunların hepsini tek seferde constructor'a vermek yerine, adım adım kurabiliriz. Çünkü constructorda bir süre sonra hangi parametrenin ne olduğunu anlamak zorlaşır. Şöyle yapıyoruz: Nesnemiz şu olsun: 
+ public class Computer
+{
+    public string Cpu { get; set; }
+    public string Ram { get; set; }
+    public string Gpu { get; set; }
+}
+Build: public class ComputerBuilder
+{
+    private Computer computer = new Computer();
+
+    public ComputerBuilder SetCpu(string cpu)
+    {
+        computer.Cpu = cpu;
+        return this;
+    }
+
+    public ComputerBuilder SetRam(string ram)
+    {
+        computer.Ram = ram;
+        return this;
+    }
+
+    public ComputerBuilder SetGpu(string gpu)
+    {
+        computer.Gpu = gpu;
+        return this;
+    }
+
+    public Computer Build()
+    {
+        return computer;
+    }
+}
+Kullanımı:
+
+Computer pc = new ComputerBuilder()
+    .SetCpu("Ryzen 7")
+    .SetRam("32 GB")
+    .SetGpu("RTX 5070")
+    .Build();
+
+    Builder kısaca karmaşık bir nesneyi tek seferde değil, parça parça oluşturur.
+
+    4. Singleton
+
+Amaç bir sınıftan uygulama boyunca sadece bir tane nesne oluşturulsun. Örn ayarlar oluşturslım ve her yerde o kullanılsın. public class Settings
+{
+    private static Settings instance;
+
+    private Settings()
+    {
+    }
+
+    public static Settings GetInstance()
+    {
+        if (instance == null)
+        {
+            instance = new Settings();
+        }
+
+        return instance;
+    }
+}
+Kullanımı: 
+Settings settings1 = Settings.GetInstance();
+Settings settings2 = Settings.GetInstance();
+private olduğu için new Settings(); e izin vermiyor.
+
+5. Prototype
+
+Amaç sıfırdan yeni nesne oluşturmak yerine, var olan nesneyi kopyalamak.
+public class Enemy
+{
+    public string Name { get; set; }
+    public int Health { get; set; }
+    public int Damage { get; set; }
+
+    public Enemy Clone()
+    {
+        return new Enemy
+        {
+            Name = this.Name,
+            Health = this.Health,
+            Damage = this.Damage
+        };
+    }
+}
+
+
+Enemy enemy1 = new Enemy
+{
+    Name = "Goblin",
+    Health = 100,
+    Damage = 20
+};
+
+Enemy enemy2 = enemy1.Clone();
