@@ -88,3 +88,6 @@ Aynı işi yapmanın birden fazla yolu varsa, hangi yöntemi kullanacağını d�
 
 9. Template Method
 Bir işin ana sırasını sabit tut, ama bazı adımlarını alt class’ların değiştirmesine izin ver.
+
+10. Visitor
+Nesneleri değiştirmeden onlara dışarıdan yeni operasyon ekleme işidir.
