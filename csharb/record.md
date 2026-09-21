@@ -1,0 +1,1 @@
+Bir yapının amacı sadece veri taşımaksa record kullanılır. DTO, Query, Commend genelde record; nesnenin davranışları varsa class kullanılır.
