@@ -92,4 +92,4 @@ new ProductRepository(...) ve Service’e veriyor.
 
 
 
-Özetle Ef corevarken repository diye ayırmaya orta projelerde gerek yok.
+Özetle Ef core varken repository diye ayırmaya orta projelerde gerek yok.
