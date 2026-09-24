@@ -1,0 +1,6 @@
+Delegate bir fonksiyonu bir nesnede tutmamızı sağlayan türdür.
+
+delegate string Reverse(string s);------string alan ve string döndüren methodları gösterir.
+
+Ama genelde koda delegate yazmayız; framework kendi oluşturmuştur. Bizim yazdığımız şekli şu şekle benzerdir.
+TextChanged += SearchEdit_TextChanged;
