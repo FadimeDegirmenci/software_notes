@@ -1,0 +1,37 @@
+AddSingleton'ın çalışma mantığı: Uygulama çalıştığı sürece o sınıftan sadece bir tane nesne (instance) oluşturulur. Sayfa veya servis ilk defa çağrıldığında üretilir ve uygulama kapanana kadar bellekte tutularak her yerde aynı nesne yeniden kullanılır.
+
+Ne Zaman Kullanılır?
+
+Tüm uygulamanın ortak erişmesi gereken durum bilgileri (State) tutuluyorsa.
+
+Oluşturulması bellek/işlemci açısından maliyetli olan servisler varsa.
+
+Veritabanı bağlantıları veya API oturum yönetimi gibi yapılar.
+
+Örnekler:
+
+AuthService (Kullanıcının giriş yapıp yapmadığını ve token bilgisini tutan servis).
+
+ThemeService (Uygulama temasını yöneten yapı).
+
+MainPage / AppShell (Uygulamanın ana kabuğu ve ana ekranı).
+
+
+
+AddTransient: Çalışma Mantığı: Sınıfa her ihtiyaç duyulduğunda (bir sayfaya geçildiğinde veya bir servise enjekte edildiğinde) baştan sıfır bir nesne üretilir. İşlemi bittiğinde ve referansı kalmadığında bellekten temizlenir (Garbage Collector tarafından toplanır).
+
+Ne Zaman Kullanılır?
+
+Her açıldığında sıfırlanması, temiz bir veriyle başlaması gereken sayfalar.
+
+Hafif, durum tutmayan (stateless) yardımcı servisler.
+
+Kısa ömürlü formlar veya detay sayfaları.
+
+Örnekler:
+
+ProductDetailViewModel (Her ürün detayına tıklandığında yeni bir ürün bilgisi yükleneceği için eski verinin kalmaması gerekir).
+
+PaymentPage (Ödeme ekranı her açıldığında formun temiz olması gerekir).
+
+PdfExportService (Anlık bir dosya oluşturup işi biten servis).
