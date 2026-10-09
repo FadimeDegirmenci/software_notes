@@ -1,0 +1,17 @@
+Thread Dispatch (İş Parçacığı Sevk Etme/Dağıtma), işletim sistemi çekirdeğinin (kernel) hazır durumdaki bir thread'i (iş parçacığını) işlemciye (CPU) atayarak yürütmeye başlatması sürecidir.
+Dispatcher (Sevk Edici): Scheduler'ın seçtiği thread'i CPU'ya yükler ve çalıştırır (Kararı eyleme dönüştüren mekanizmadır).
+
+
+
+Thread Dispatch Aşamaları
+
+Sevk edici (dispatcher) bir thread'i CPU'ya atarken şu adımları sırasıyla gerçekleştirir:
+
+1. Bağlam Saklama (Context Saving): Halihazırda CPU üzerinde çalışan thread'in durumunu (yazmaç/register değerleri, Program Counter, yığın bilgileri) hafızaya kaydeder.
+2. Yeni Bağlamı Yükleme (Context Restoring): Sıradaki yeni thread'in daha önce kaydedilmiş durumunu CPU yazmaçlarına yükler.
+3. Mod Değişimi (Mode Switch):İşlemciyi Çekirdek (Kernel) modundan Kullanıcı (User) moduna geçirir.
+4. Çalıştırma (Jump to Instruction):Yeni thread'in kaldığı son komut adresine atlayarak programın akışını devam ettirir.
+
+Dispatch Latency (Sevk Gecikmesi)
+
+Bir thread'in durdurulması ile yeni thread'in CPU üzerinde ilk komutunu çalıştırması arasında geçen süreye Dispatch Latency denir. Gerçek zamanlı işletim sistemlerinde (RTOS) bu sürenin olabildiğince kısa ve öngörülebilir olması kritik önem taşır.
