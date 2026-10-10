@@ -1,0 +1,40 @@
+INotifyPropertyChanged, .NET uygulamalarında bir sınıfın özelliğindeki (property) değişiklikleri kullanıcı arayüzüne bildirmesini sağlayan `System.ComponentModel` namespace'i altındaki temel bir arabirimdir.
+
+Özellikle (Model-View-ViewModel) mimarisinde, koddaki bir değişken değiştiğinde ekrandaki bileşenin (TextBox, Label vb.) yenilenmesini otomatikleştirmek için kullanılır.
+
+Neden Gereklidir?
+
+Normal bir C# sınıfında bir özelliğin değerini değiştirdiğinizde (örneğin `KullaniciAdi = "Ahmet"` yapıldığında), UI bileşenleri bu değişimden haberdar olmaz. `INotifyPropertyChanged` devreye girerek "Bu özelliğin değeri değişti, ekranı güncelle!" uyarısı gönderir.
+
+Uygulama Örneği
+
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
+
+public class PersonelViewModel : INotifyPropertyChanged
+{
+    private string _ad;
+
+    // INotifyPropertyChanged ile gelen zorunlu event
+    public event PropertyChangedEventHandler PropertyChanged;
+
+    public string Ad
+    {
+        get => _ad;
+        set
+        {
+            if (_ad != value)
+            {
+                _ad = value;
+                // Değer değiştiğinde bildirimi tetikliyoruz
+                OnPropertyChanged();
+            }
+        }
+    }
+
+    // [CallerMemberName] sayesinde "Ad" metnini elle yazmak zorunda kalmayız
+    protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
+    {
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+    }
+}
