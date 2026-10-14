@@ -2,8 +2,6 @@
 
 `INotifyPropertyChanged` tekil nesnelerin özellik (property) değişimlerini bildirirken, `ObservableCollection<T>` listenin kendisindeki (yapısal) değişimleri bildirir.
 
-
-
 Standart bir `List<T>` nesnesine `.Add()` ile yeni bir eleman eklediğinizde ekrandaki liste (`ListBox`, `DataGrid`, `CollectionView` vb.) güncellenmez. `ObservableCollection<T>` kullandığınızda ise ekstra kod yazmanıza gerek kalmadan arayüz otomatik yenilenir.
 
 Temel Kullanım Örneği
