@@ -35,3 +35,15 @@ ProductDetailViewModel (Her ürün detayına tıklandığında yeni bir ürün b
 PaymentPage (Ödeme ekranı her açıldığında formun temiz olması gerekir).
 
 PdfExportService (Anlık bir dosya oluşturup işi biten servis).
+
+
+
+
+.NET Servis Yaşam Döngüleri (Service Lifetimes)
+IoC Container'a bir bağımlılık kaydederken nesnenin ne kadar süre yaşayacağını belirtmeniz gerekir:
+
+Transient (AddTransient): Servis her istendiğinde yeni bir nesne örneği oluşturulur.
+
+Scoped (AddScoped): Her HTTP isteği (request) için tek bir nesne oluşturulur. İstek tamamlanana kadar aynı nesne kullanılır. Veritabanı işlemleri için en yaygın tercihtir.
+
+Singleton (AddSingleton): Uygulama başlatıldığında tek bir nesne oluşturulur ve uygulama kapatılana kadar her yerde aynı nesne kullanılır.
