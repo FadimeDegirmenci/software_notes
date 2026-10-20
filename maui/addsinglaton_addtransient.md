@@ -47,3 +47,11 @@ Transient (AddTransient): Servis her istendiğinde yeni bir nesne örneği oluş
 Scoped (AddScoped): Her HTTP isteği (request) için tek bir nesne oluşturulur. İstek tamamlanana kadar aynı nesne kullanılır. Veritabanı işlemleri için en yaygın tercihtir.
 
 Singleton (AddSingleton): Uygulama başlatıldığında tek bir nesne oluşturulur ve uygulama kapatılana kadar her yerde aynı nesne kullanılır.
+
+
+
+Aşağıdaki örnekte neden servisin kendisini değil de fonksiyonu veriyoruz? Servis durum tutuyor (IsSuccess, Message) diyelim; ViewModel’e servisin kendisini verseydik, sayfa açık kaldığı sürece hep aynı servisi kullanılırdı. Böylece bir önceki işlemden kalan hata mesajı sonraki işleme taşınabilirdi. Fonksiyonla her işlemde temiz bir servis geliyor. Kullanımı ise yine constructora ekleme şeklinde ama ICariService diye eklemiyoruz da Func<ICariService> ekliyoruz.
+
+
+   builder.Services.AddTransient<Func<ICariService>>(sp => () => sp.GetRequiredService<ICariService>()); 
+ 
