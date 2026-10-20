@@ -1,3 +1,5 @@
 DevExpress TwoWay (İki Yönlü Veri Bağlama), kullanıcı arayüzündeki (UI) bir kontrol ile veri kaynağı (Model / ViewModel) arasındaki veri akışının çift yönlü ve anlık olarak senkronize edilmesini sağlayan bir veri bağlama (Data Binding) modudur.
 DevExpress ve .NET MAUI'de kullanıcıdan veri alan girdi bileşenlerinin düzenlenebilir özellikleri (Text, IsChecked, Date vb.) varsayılan olarak TwoWay tanımlanmıştır.
 Salt okunur veya sadece bilgi gösterme amaçlı bileşenlerde varsayılan bağlama modu OneWay (Tek yönlü: Model → Ekran) olarak tanımlanmıştır.
+
+        <dx:DXPopup IsOpen="{Binding IslemMenusuAcik, Mode=TwoWay}"
