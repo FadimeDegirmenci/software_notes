@@ -6,7 +6,7 @@ Mobil uygulamada farklı ekranlar (sayfalar) oluşturma, bu sayfalar arasında g
 
 .NET MAUI'de ekran sayfalama üç ana yapı üzerinden yürütülür:
 
-AppShell (Shell Navigation): 
+a-AppShell (Shell Navigation): 
 
 // Belirtilen rotadaki sayfaya gitme
 await Shell.Current.GoToAsync("//MainPage/DetailsPage");
@@ -15,8 +15,8 @@ await Shell.Current.GoToAsync("//MainPage/DetailsPage");
 await Shell.Current.GoToAsync($"{nameof(DetailPage)}?ItemId={selectedId}");
 
 
-NavigationPage (Stack Tabanlı Gezinme): Sayfaları bir yığın yapısında üst üste koyar. `PushAsync` ile yeni sayfa eklenir, `PopAsync` veya cihazın "Geri" tuşu ile önceki sayfaya dönülür.
-Sayfa Türleri (Page Types):
+b-NavigationPage (Stack Tabanlı Gezinme): Sayfaları bir yığın yapısında üst üste koyar. `PushAsync` ile yeni sayfa eklenir, `PopAsync` veya cihazın "Geri" tuşu ile önceki sayfaya dönülür.
+c-Sayfa Türleri (Page Types):
  `ContentPage`: En temel, tek bir görsel içeriği barındıran ekran.
  `FlyoutPage`: Yan menü (Drawer) yapısını yöneten sayfa türü.
  `TabbedPage`: Alt veya üst sekmelerle sayfalar arası geçiş sağlayan yapı.
