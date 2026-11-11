@@ -1,5 +1,7 @@
 Add DevExpress Reporting NuGet Packages
 DevExpress.Reporting.Core
+DevExpress.Drawing.Skia
+
 using DevExpress.Maui.Pdf;
 using DevExpress.XtraReports.UI;
 using MauiReportingApp.Data;
